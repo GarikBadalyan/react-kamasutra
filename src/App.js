@@ -3,6 +3,9 @@ import './App.css';
 import Header from "./components/header/header";
 import Navbar from "./components/navbar/navbar";
 import Profile from "./components/profile/profile";
+import Dialogs from "./components/Dialogs/dialog";
+import News from "./components/news/news";
+import {BrowserRouter, Route} from "react-router-dom";
 
 
 // kompomemt
@@ -51,11 +54,21 @@ import Profile from "./components/profile/profile";
 
 const App = () => {
     return (
-        <div className='app-wrapper'>
-            <Header />
-            <Navbar />
-            <Profile />
-        </div>
+        <BrowserRouter>
+            <div className='app-wrapper'>
+                <Header/>
+                <Navbar/>
+                {/*<Profile />*/}
+                <div className='app-wrapper-content'>
+                    {/*ey route du nkarum es Profile component@ erb vor qo path@ aysinqn url@ /profile - e
+                    isk url@ poxvum e navbar.js-i mijic : Aysinqn es Routner@ misht hetevum en erb vor url@
+                     iranc path-in hamapatasxanum e irank nkarum en iranc component@*/}
+                    <Route path='/profile' component={Profile}/>
+                    <Route path='/dialogs' component={Dialogs}/>
+                    <Route path='/news' component={News}/>
+                </div>
+            </div>
+        </BrowserRouter>
     )
 }
 export default App

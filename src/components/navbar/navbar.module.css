@@ -2,12 +2,15 @@
 .nav {
     grid-area: n;
     background-color: lawngreen;
+    padding: 20px;
 }
 
+/*ete item qo mej ka <a> uremn du petk e @ndunes es css styler@*/
 .item a {
-    color: white;
+    color: darkmagenta;
+    text-decoration: none;
 }
-
-.item.active a{
-    color: red;
+/*ete item qo mej ka <a> ev unes activeLink uremn du petk e @ndunes es css styler@*/
+.item a.activeLink{
+    color: gold;
 }

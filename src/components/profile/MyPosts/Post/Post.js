@@ -2,7 +2,7 @@ import s from "./Post.module.css";
 
 
 const Post = (props) => {
-    // console.log(props.message)
+    //console.log(props) sa obyekt e
     return (
         <div className={s.item}>
             <img
@@ -11,7 +11,7 @@ const Post = (props) => {
             {props.messages}
             {props.anun} , {props.azganun}
             <div>
-                <span>{props.name}</span>
+                <span>Like</span>{props.likeCount}
                 <span>{props.age}</span>
             </div>
         </div>
