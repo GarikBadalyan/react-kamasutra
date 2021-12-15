@@ -53,6 +53,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 // 11 das
 
 const App = () => {
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
