@@ -40,5 +40,14 @@ export let addPost = (postMessage) => {
     rerenderEntireTree(state)
 };
 
+export let addMessage = (postMessage2) => {
+    let newPostObj = {
+        name:postMessage2,
+        id: 0
+    }
+    state.profilePage.dialogsData.push(newPostObj)
+    rerenderEntireTree(state)
+}
+
 console.log('333')
 export default state;

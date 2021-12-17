@@ -69,7 +69,7 @@ const App = (props) => {
                     {/*<Route path='/dialogs' component={Dialogs}/>*/}
                     {/*verevi erku toxi gracn u nerqevi erku toxi grac@ nuynna*/}
 
-                    <Route path='/dialogs' render={() => <Dialogs state={props.state}/>}/>
+                    <Route path='/dialogs' render={() => <Dialogs state={props.state} addMessage = {props.addMessage} />}/>
                     <Route path='/profile' render={() => <Profile state={props.state.profilePage} addPost ={props.addPost} />}/>
                     <Route path='/news' component={News}/>
                 </div>
