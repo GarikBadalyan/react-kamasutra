@@ -1,37 +1,49 @@
 import s from './dialog.module.css'
 import Dialogitem from "./Dialogitem/Dialogitem";
 import Messages from "./Message/Message";
+import React from "react";
 
-let dialogsData = [
-    {name: "Narek333666", id: "111",},
-    {name: "Mari", id: "222"},
-    {name: "Karen", id: "333"},
-    {name: "Anahit", id: "444"},
-    {name: "Armen", id: "555"},
-]
 
-let dialogElements = dialogsData.map( (dialog) => {
-    return  <Dialogitem name={dialog.name} id={dialog.id}/>
-})
+// let messagesData = [
+//     {id : "1", message : "hiiii"},
+//     {id : "2", message : "How are you"},
+//     {id : "3", message : "What is your name"},
+//     {id : "4", message : "AAAAAAAABBBBB"},
+// ]
 
-let messagesData = [
-    {id : "1", message : "hiiii"},
-    {id : "2", message : "How are you"},
-    {id : "3", message : "What is your name"},
-    {id : "4", message : "AAAAAAAABBBBB"},
-]
 
-let messageElement = messagesData.map (  (elem) => {
-    return <Messages message={elem.message}/>
-})
+const Dialogs = (props) => {
 
-const Dialogs = () => {
+    let dialogElements = props.state.profilePage.dialogsData.map((dialog) => {
+        return <Dialogitem name={dialog.name} id={dialog.id}/>
+    })
+
+    let messageElement = props.state.dialogsPage.messages.map((elem) => {
+        return <Messages message={elem.message}/>
+    })
+
+    newMessageElement = React.createRef()
+
+    let addMessage = () => {
+
+    }
+
     return (
-        <div className={s.dialogs} >
-            <div className= {s.dialogsItems} >
-                {dialogElements}
+        <div className={s.dialogs}>
+            <div>
+                <div className={s.dialogsItems}>
+                    <div>
+                        <div>
+                            <textarea ref={newMessageElement}></textarea>
+                        </div>
+                        <div>
+                            <button onClick={addMessage}>Add post</button>
+                        </div>
+                    </div>
+                    {dialogElements}
+                </div>
             </div>
-            <div className= {s.messages} >
+            <div className={s.messages}>
                 {messageElement}
             </div>
         </div>

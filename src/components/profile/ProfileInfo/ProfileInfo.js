@@ -6,7 +6,7 @@ const ProfileInfo = () => {
     return (
         <div>
             <div>
-                <img src="https://cdn.pixabay.com/photo/2021/09/17/08/40/lake-6632026__340.jpg" alt=""/>
+                <img src="https://img.freepik.com/free-photo/wide-angle-shot-of-a-single-tree-growing-under-a-clouded-sky-during-a-sunset-surrounded-by-grass_181624-22807.jpg?size=626&ext=jpg" alt=""/>
             </div>
             <div className={s.item}>
                 ava + description

@@ -16,7 +16,8 @@ grid-template-columns: 2fr 10fr;
 }
 
 .messages {
-padding: 10px;
+padding: 70px 0 0 0;
+
 }
 
 .messages .message {

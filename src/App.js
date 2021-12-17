@@ -1,11 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Header from "./components/header/header";
 import Navbar from "./components/navbar/navbar";
 import Profile from "./components/profile/profile";
 import Dialogs from "./components/Dialogs/dialog";
 import News from "./components/news/news";
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
+
 
 
 // kompomemt
@@ -51,11 +52,10 @@ import {BrowserRouter, Route} from "react-router-dom";
 // }
 
 // 11 das
-
-const App = () => {
-
+const App = (props) => {
+    // console.log(props)
+    // console.log({props.state.profilePage.dialogsData})
     return (
-        <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
@@ -64,12 +64,16 @@ const App = () => {
                     {/*ey route du nkarum es Profile component@ erb vor qo path@ aysinqn url@ /profile - e
                     isk url@ poxvum e navbar.js-i mijic : Aysinqn es Routner@ misht hetevum en erb vor url@
                      iranc path-in hamapatasxanum e irank nkarum en iranc component@*/}
-                    <Route path='/profile' component={Profile}/>
-                    <Route path='/dialogs' component={Dialogs}/>
+
+                    {/*<Route path='/profile' component={Profile}/>*/}
+                    {/*<Route path='/dialogs' component={Dialogs}/>*/}
+                    {/*verevi erku toxi gracn u nerqevi erku toxi grac@ nuynna*/}
+
+                    <Route path='/dialogs' render={() => <Dialogs state={props.state}/>}/>
+                    <Route path='/profile' render={() => <Profile state={props.state.profilePage} addPost ={props.addPost} />}/>
                     <Route path='/news' component={News}/>
                 </div>
             </div>
-        </BrowserRouter>
     )
 }
 export default App
