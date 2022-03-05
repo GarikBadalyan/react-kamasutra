@@ -3,6 +3,7 @@ import s from "./Post.module.css";
 
 const Post = (props) => {
     //console.log(props) sa obyekt e
+    console.log("Post.js-n e ashxatel")
     return (
         <div className={s.item}>
             <img

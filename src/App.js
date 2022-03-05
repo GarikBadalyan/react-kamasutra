@@ -2,10 +2,11 @@
 import './App.css';
 import Header from "./components/header/header";
 import Navbar from "./components/navbar/navbar";
-import Profile from "./components/profile/profile";
-import Dialogs from "./components/Dialogs/dialog";
 import News from "./components/news/news";
 import {Route} from "react-router-dom";
+import DialogsContainer from "./components/Dialogs/dialogsContainer";
+import UsersContainer from "./components/users/UsersContainer";
+import ProfileContainer from "./components/profile/ProfileContainer";
 
 
 
@@ -52,28 +53,21 @@ import {Route} from "react-router-dom";
 // }
 
 // 11 das
-const App = (props) => {
+const App = () => {
     // console.log(props)
     // console.log({props.state.profilePage.dialogsData})
     return (
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
-                {/*<Profile />*/}
                 <div className='app-wrapper-content'>
-                    {/*ey route du nkarum es Profile component@ erb vor qo path@ aysinqn url@ /profile - e
-                    isk url@ poxvum e navbar.js-i mijic : Aysinqn es Routner@ misht hetevum en erb vor url@
-                     iranc path-in hamapatasxanum e irank nkarum en iranc component@*/}
-
-                    {/*<Route path='/profile' component={Profile}/>*/}
-                    {/*<Route path='/dialogs' component={Dialogs}/>*/}
-                    {/*verevi erku toxi gracn u nerqevi erku toxi grac@ nuynna*/}
-
-                    <Route path='/dialogs' render={() => <Dialogs state={props.state} addMessage = {props.addMessage} />}/>
-                    <Route path='/profile' render={() => <Profile state={props.state.profilePage} addPost ={props.addPost} />}/>
+                    <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                    <Route path='/profile' render={() => <ProfileContainer/>}/>
+                    <Route path='/users' render={() => <UsersContainer />}/>
                     <Route path='/news' component={News}/>
                 </div>
             </div>
     )
 }
 export default App
+
